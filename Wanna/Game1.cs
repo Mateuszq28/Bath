@@ -29,7 +29,7 @@ namespace Bath
         {
             // TODO: Add your initialization logic here
 
-            screenManager = new ScreenManager();
+            screenManager = new ScreenManager(graphics);
 
             base.Initialize();
         }

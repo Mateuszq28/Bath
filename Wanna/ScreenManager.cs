@@ -12,7 +12,7 @@ namespace Bath
 {
     class ScreenManager
     {
-        public ScreenManager()
+        public ScreenManager(GraphicsDeviceManager graphics)
         {
 
         }
