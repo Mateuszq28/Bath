@@ -39,10 +39,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bath.cs" />
+    <Compile Include="BattleScreen.cs" />
     <Compile Include="Father.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen.cs" />
     <Compile Include="ScreenManager.cs" />
     <Compile Include="SeaScreen.cs" />
   </ItemGroup>

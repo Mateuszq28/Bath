@@ -13,10 +13,15 @@ namespace Bath
     class ScreenManager
     {
         Vector2 resolution;
-        SeaScreen seaScreen;
+        //SeaScreen seaScreen;
+        bool fatherCatched;
+        List<Screen> screens = new List<Screen>();
+        int currentScreen;
+
 
         public ScreenManager(GraphicsDeviceManager graphics)
         {
+            currentScreen = 0;
             resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             //resolution.Y = 480;
@@ -26,22 +31,35 @@ namespace Bath
             graphics.IsFullScreen = false;
 
 
-            seaScreen = new SeaScreen(resolution);
+            //seaScreen = new SeaScreen(resolution);
+            screens.Add(new SeaScreen(resolution));
+            screens.Add(new BattleScreen(resolution));
         }
 
         public void LoadContent(ContentManager Content)
         {
-            seaScreen.LoadContent(Content);
+            foreach(Screen s in screens)
+            {
+                s.LoadContent(Content);
+            }
+            //seaScreen.LoadContent(Content);
         }
 
         public void Update(GameTime gameTime)
         {
-            seaScreen.Update(gameTime);
+            screens[currentScreen].Update(gameTime);
+            //seaScreen.Update(gameTime);
+            if(screens[0].GetCollisionState())
+            {
+                currentScreen = 1;
+                screens[0].Reset();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            seaScreen.Draw(spriteBatch);
+            screens[currentScreen].Draw(spriteBatch);
+            //seaScreen.Draw(spriteBatch);
             
         }
     }

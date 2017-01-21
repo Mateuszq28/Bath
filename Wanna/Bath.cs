@@ -128,6 +128,11 @@ namespace Bath
             }
             return collision;
         }
+
+        public void Reset()
+        {
+            position.X = res.X / 2;
+        }
     }
 
 

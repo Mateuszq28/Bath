@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Bath
 {
-    class SeaScreen
+    class SeaScreen : Screen
     {
         Bath bath;
         List<Father> listOfFathers = new List<Father>();
@@ -28,7 +28,7 @@ namespace Bath
             rand = new Random();
         }
 
-        public void LoadContent(ContentManager Content)
+        public override void LoadContent(ContentManager Content)
         {
             seaTex = Content.Load<Texture2D>("background");
             fatherTex = Content.Load<Texture2D>("flyingFatherS");
@@ -36,7 +36,7 @@ namespace Bath
             bath.LoadContent(Content);
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             time += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if(time > 0.7)
@@ -52,14 +52,9 @@ namespace Bath
                     listOfFathers.Remove(listOfFathers[i]);
 
             }
-
-            if(bath.CheckCollision(listOfFathers))
-            {
-                listOfFathers.Clear();
-            }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
             spriteBatch.Draw(seaTex, Vector2.Zero, null,
@@ -70,6 +65,19 @@ namespace Bath
             {
                 f.Draw(spriteBatch);
             }
+
+        }
+
+        public override bool GetCollisionState()
+        {
+            return bath.CheckCollision(listOfFathers);
+        }
+
+        public override void Reset()
+        {
+            listOfFathers.Clear();
+            time = 0;
+            bath.Reset();
 
         }
     }
