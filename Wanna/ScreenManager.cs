@@ -49,11 +49,16 @@ namespace Bath
         {
             screens[currentScreen].Update(gameTime);
             //seaScreen.Update(gameTime);
-            if(screens[0].GetCollisionState())
+            if(screens[currentScreen].ScreenChange())
             {
-                currentScreen = 1;
-                screens[0].Reset();
+                screens[currentScreen].Reset();
+                if (currentScreen == 1)
+                    currentScreen = 0;
+                else
+                    currentScreen = 1;
+                
             }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)

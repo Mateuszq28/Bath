@@ -93,11 +93,17 @@ namespace Bath
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, List<Father> listOfFathers)
         {
             spriteBatch.Begin();
             spriteBatch.Draw(bathTex1, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(bathTex2, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
+            spriteBatch.End();
+            foreach (Father f in listOfFathers)
+            {
+                f.Draw(spriteBatch);
+            }
+            spriteBatch.Begin();
             spriteBatch.Draw(water, new Vector2(wave1.X,wave1.Y + delta), null, Color.White, angle, new Vector2(water.Width / 2, 0), scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(water, new Vector2(wave2.X, wave2.Y + delta), null, Color.White, angle, new Vector2(0, 0), scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(water, new Vector2(wave3.X, wave3.Y + delta), null, Color.White, angle, new Vector2(water.Width, 0), scale, SpriteEffects.None, 0f);

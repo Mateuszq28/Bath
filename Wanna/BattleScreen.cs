@@ -31,8 +31,8 @@ namespace Bath
         int animFrame;
         float frameTime;
         int cursorSpeed;
-        bool fatherDefeated = false;
-        bool raped = false;
+        public bool fatherDefeated = false;
+        public bool raped = false;
         KeyboardState keyboardState;
         KeyboardState prevState;
 
@@ -51,7 +51,7 @@ namespace Bath
             cursorWidth = 65.0f * scale;
             cursorPos.X = (res.X - cursorWidth) / 2;
             cursorPos.Y = 0;
-            cursorSpeed = (int)res.X / 10; ;
+            cursorSpeed = (int)res.X / 10; 
         }
 
         public override void LoadContent(ContentManager Content)
@@ -125,9 +125,18 @@ namespace Bath
             spriteBatch.End();
         }
 
-        public override bool GetCollisionState()
+        public override bool ScreenChange()
         {
-            throw new NotImplementedException();
+            return fatherDefeated;
+        }
+
+        public override void Reset()
+        {
+            fatherDefeated = false;
+            raped = false;
+            animFrame = 0;
+            cursorPos.X = (res.X - cursorWidth) / 2;
+            cursorSpeed = (int)res.X / 10;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Bath
             
         }
 
-        public abstract bool GetCollisionState();
+        public abstract bool ScreenChange();
         
 
         

@@ -62,15 +62,12 @@ namespace Bath
             spriteBatch.Draw(seaTex, Vector2.Zero, null,
                 Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.End();
-            bath.Draw(spriteBatch);
-            foreach (Father f in listOfFathers)
-            {
-                f.Draw(spriteBatch);
-            }
+            bath.Draw(spriteBatch, listOfFathers);
+            
 
         }
 
-        public override bool GetCollisionState()
+        public override bool ScreenChange()
         {
             return bath.CheckCollision(listOfFathers);
         }
