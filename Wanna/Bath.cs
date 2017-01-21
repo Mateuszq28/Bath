@@ -63,6 +63,14 @@ namespace Bath
             else if (keyboardState.IsKeyDown(Keys.Left))
                 position.X -= speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            if(position.X < width/2 )
+            {
+                position.X = width/2;
+            }
+            else if(position.X + width/2> res.X)
+            {
+                position.X = res.X - width/2;
+            }
             position.Y = a * position.X * position.X + b * position.X + c;
             //positionDraw.X = position.X - width/2;
             //positionDraw.Y = position.Y - height/2;

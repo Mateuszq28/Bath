@@ -23,7 +23,7 @@ namespace Bath
             //resolution.X = 853;
             graphics.PreferredBackBufferHeight = (int)resolution.Y;
             graphics.PreferredBackBufferWidth = (int)resolution.X;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
 
 
             seaScreen = new SeaScreen(resolution);

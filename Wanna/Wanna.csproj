@@ -59,6 +59,8 @@
     <Content Include="Content\bathtube1l.png" />
     <Content Include="Content\bathtube2.png" />
     <Content Include="Content\boatTex.png" />
+    <Content Include="Content\flyingFather.png" />
+    <Content Include="Content\flyingFatherS.png" />
     <Content Include="Content\wannaznow.png" />
     <Content Include="Content\wannaznow2.png" />
     <Content Include="Content\water.png" />
