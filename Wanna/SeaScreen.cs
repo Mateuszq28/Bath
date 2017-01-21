@@ -16,6 +16,7 @@ namespace Bath
         List<Father> listOfFathers = new List<Father>();
         Texture2D seaTex;
         Texture2D fatherTex;
+        Texture2D fatherTex2;
         Vector2 res;
         float scale;
         float time;
@@ -32,6 +33,7 @@ namespace Bath
         {
             seaTex = Content.Load<Texture2D>("background");
             fatherTex = Content.Load<Texture2D>("flyingFatherS");
+            fatherTex2 = Content.Load<Texture2D>("flyingFather2S");
             scale = res.Y / seaTex.Height;
             bath.LoadContent(Content);
         }
@@ -42,7 +44,7 @@ namespace Bath
             if(time > 0.7)
             {
                 time = 0;
-                listOfFathers.Add(new Father((int)(rand.Next(0,7) * res.X) / 8, res, scale, fatherTex));
+                listOfFathers.Add(new Father((int)(rand.Next(0,7) * res.X) / 8, res, scale, fatherTex, fatherTex2));
             }
             bath.Update(gameTime);
             for (int i = 0; i < listOfFathers.Count(); i++)

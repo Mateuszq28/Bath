@@ -35,3 +35,11 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Conten
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\flyingFatherS.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube3.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\Bathwithbaby.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\battlefight1H.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\battlefight2H.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\battlefight3H.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\battlefight4H.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube2en.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\Battlebar.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\battlecursor.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\FlyingFather2S.xnb

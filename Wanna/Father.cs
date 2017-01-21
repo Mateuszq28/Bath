@@ -12,23 +12,24 @@ namespace Bath
 {
     class Father
     {
-        Texture2D fatherTex;
+        Texture2D[] fatherTex = new Texture2D[2];
         Vector2 position;
         int width, height;
         int speed;
         Rectangle collisionBox;
         float scale;
-        Random rand;
+        float time;
+        int currentFrame = 0;
 
-
-        public Father(int positionX, Vector2 res, float scale, Texture2D fatherTex)
+        public Father(int positionX, Vector2 res, float scale, Texture2D fatherTex, Texture2D fatherTex2)
         {
             this.scale = scale;
             position.X = positionX;
             width = (int)res.X / 8;
             height = width * fatherTex.Height / fatherTex.Width;
             position.Y = -height;
-            this.fatherTex = fatherTex;
+            this.fatherTex[0] = fatherTex;
+            this.fatherTex[1] = fatherTex2;
             speed = (int)res.Y / 2;
         }
 
@@ -36,6 +37,16 @@ namespace Bath
 
         public void Update(GameTime gameTime)
         {
+            time += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if(time > 0.15f)
+            {
+                time = 0;
+                if (currentFrame == 0)
+                    currentFrame = 1;
+                else
+                    currentFrame = 0;
+            }
+
             collisionBox.X = (int)position.X + width / 4;
             collisionBox.Width = width/2;
             collisionBox.Y = (int)position.Y + height / 6;
@@ -48,7 +59,7 @@ namespace Bath
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(fatherTex, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(fatherTex[currentFrame], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.End();
         }
 
