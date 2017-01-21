@@ -17,6 +17,7 @@ namespace Bath
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            screenManager = new ScreenManager(graphics);
         }
 
         /// <summary>
@@ -29,7 +30,7 @@ namespace Bath
         {
             // TODO: Add your initialization logic here
 
-            screenManager = new ScreenManager(graphics);
+            
 
             base.Initialize();
         }

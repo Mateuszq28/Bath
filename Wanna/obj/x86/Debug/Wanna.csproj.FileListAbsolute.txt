@@ -23,3 +23,10 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\SharpD
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Debug\Wanna.csprojResolveAssemblyReference.cache
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Debug\Wanna.exe
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Debug\Wanna.pdb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\background.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube1.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube2.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\boatTex.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube1l.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\wannaznow.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\wannaznow2.xnb

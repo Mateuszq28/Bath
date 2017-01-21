@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/background.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/bathtube1.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/bathtube2.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/boatTex.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/bathtube1l.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/wannaznow.png</File>
+    <File>C:/Users/matit_000/Documents/GitHub/Bath/Bath/Wanna/Content/wannaznow2.png</File>
+  </SourceFiles>
+</SourceFileCollection>

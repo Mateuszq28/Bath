@@ -54,6 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\background.png" />
+    <Content Include="Content\bathtube1.png" />
+    <Content Include="Content\bathtube1l.png" />
+    <Content Include="Content\bathtube2.png" />
+    <Content Include="Content\boatTex.png" />
+    <Content Include="Content\wannaznow.png" />
+    <Content Include="Content\wannaznow2.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

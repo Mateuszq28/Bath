@@ -12,24 +12,37 @@ namespace Bath
 {
     class ScreenManager
     {
+        Vector2 resolution;
+        SeaScreen seaScreen;
+
         public ScreenManager(GraphicsDeviceManager graphics)
         {
+            //resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            //resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            resolution.Y = 480;
+            resolution.X = 853;
+            graphics.PreferredBackBufferHeight = (int)resolution.Y;
+            graphics.PreferredBackBufferWidth = (int)resolution.X;
+            graphics.IsFullScreen = false;
 
+
+            seaScreen = new SeaScreen(resolution);
         }
 
         public void LoadContent(ContentManager Content)
         {
-
+            seaScreen.LoadContent(Content);
         }
 
         public void Update(GameTime gameTime)
         {
-
+            seaScreen.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            seaScreen.Draw(spriteBatch);
+            
         }
     }
 }
