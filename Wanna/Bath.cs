@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using System.Diagnostics;
 
 
 namespace Bath
@@ -45,8 +46,8 @@ namespace Bath
 
         public void LoadContent(ContentManager Content)
         {
-            bathTex1 = Content.Load<Texture2D>("wannaznow2");
-            bathTex2 = Content.Load<Texture2D>("wannaznow");
+            bathTex1 = Content.Load<Texture2D>("bathwithbaby");
+            bathTex2 = Content.Load<Texture2D>("bathtube3");
             water = Content.Load<Texture2D>("water");
             scale = (res.X / 5) / bathTex1.Width;
             width = (int)(bathTex1.Width * scale);
@@ -77,6 +78,7 @@ namespace Bath
             la = (2 * a * position.X + b);
             angle = (float)Math.Atan( la );
             lb = position.Y - (la) * position.X;
+            lb -= height / 3; 
 
             wave1 = position;
             delta +=  waveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -109,6 +111,22 @@ namespace Bath
             wave1 = position;
             wave2 = new Vector2(position.X + (float)Math.Cos(angle) * res.X / 2, position.Y + (float)Math.Sin(angle) * res.X / 2);
             wave3 = new Vector2(position.X - (float)Math.Cos(angle) * res.X / 2, position.Y - (float)Math.Sin(angle) * res.X / 2);
+        }
+
+        public bool CheckCollision(List<Father> listOfFathers)
+        {
+
+            bool collision = false; ;
+            foreach (Father f in listOfFathers)
+            {
+
+                if (f.getRect().Bottom > la * f.getRect().Center.X + lb && f.getRect().Top < la * f.getRect().Center.X + lb && f.getRect().Left < position.X + width / 2 && f.getRect().Right > position.X - width / 2)
+                {
+                    collision = true;
+                    break;
+                }                 
+            }
+            return collision;
         }
     }
 

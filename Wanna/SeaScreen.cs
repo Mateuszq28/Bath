@@ -52,6 +52,11 @@ namespace Bath
                     listOfFathers.Remove(listOfFathers[i]);
 
             }
+
+            if(bath.CheckCollision(listOfFathers))
+            {
+                listOfFathers.Clear();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

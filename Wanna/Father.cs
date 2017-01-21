@@ -39,7 +39,7 @@ namespace Bath
             collisionBox.X = (int)position.X + width / 4;
             collisionBox.Width = width/2;
             collisionBox.Y = (int)position.Y + height / 6;
-            collisionBox.Height = 2 * height * 3;
+            collisionBox.Height = 2 * height / 3;
 
             position.Y += speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -55,6 +55,11 @@ namespace Bath
         public int GetX()
         {
             return (int)position.X;
+        }
+        
+        public Rectangle getRect()
+        {
+            return collisionBox;
         }
     }
 }
