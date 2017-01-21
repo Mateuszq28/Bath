@@ -13,27 +13,29 @@ namespace Bath
     class ScreenManager
     {
         Vector2 resolution;
-        //SeaScreen seaScreen;
-        bool fatherCatched;
         List<Screen> screens = new List<Screen>();
         int currentScreen;
+        int prevScreen;
+        SpriteFont font;
+        float time = 0;
+        string scoreString;
+        int score;
 
 
         public ScreenManager(GraphicsDeviceManager graphics)
         {
-            currentScreen = 0;
+            currentScreen = 3;
             resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            //resolution.Y = 480;
-            //resolution.X = 853;
             graphics.PreferredBackBufferHeight = (int)resolution.Y;
             graphics.PreferredBackBufferWidth = (int)resolution.X;
             graphics.IsFullScreen = false;
 
 
-            //seaScreen = new SeaScreen(resolution);
             screens.Add(new SeaScreen(resolution));
             screens.Add(new BattleScreen(resolution));
+            screens.Add(new OverScreen(resolution));
+            screens.Add(new StartScreen(resolution));
         }
 
         public void LoadContent(ContentManager Content)
@@ -42,20 +44,33 @@ namespace Bath
             {
                 s.LoadContent(Content);
             }
-            //seaScreen.LoadContent(Content);
+
+            font = Content.Load<SpriteFont>("Score");
         }
 
         public void Update(GameTime gameTime)
         {
-            screens[currentScreen].Update(gameTime);
-            //seaScreen.Update(gameTime);
-            if(screens[currentScreen].ScreenChange())
+
+            if (currentScreen == 0)
             {
-                screens[currentScreen].Reset();
-                if (currentScreen == 1)
-                    currentScreen = 0;
-                else
-                    currentScreen = 1;
+                time += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            
+
+            score = (int)time / 2;
+            scoreString = "Score: " + score;
+
+            screens[currentScreen].Update(gameTime);
+            
+            if(screens[currentScreen].ScreenChange() != currentScreen)
+            {
+                prevScreen = currentScreen;
+                currentScreen = screens[currentScreen].ScreenChange();
+                screens[prevScreen].Reset();
+                if (prevScreen == 2 && currentScreen == 0)
+                {
+                    time = 0;
+                }
                 
             }
             
@@ -63,9 +78,14 @@ namespace Bath
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            screens[currentScreen].Draw(spriteBatch);
-            //seaScreen.Draw(spriteBatch);
             
+            screens[currentScreen].Draw(spriteBatch);
+            if (currentScreen == 0 || currentScreen == 1 || currentScreen == 2)
+            {
+                spriteBatch.Begin();
+                spriteBatch.DrawString(font, scoreString, new Vector2(100, 100), Color.Black);
+                spriteBatch.End();
+            }
         }
     }
 }

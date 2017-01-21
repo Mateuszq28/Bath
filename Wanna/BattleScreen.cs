@@ -29,6 +29,7 @@ namespace Bath
         int waveSpeed;
         int waveSpeedY;
         int animFrame;
+        bool animStop = true;
         float frameTime;
         int cursorSpeed;
         public bool fatherDefeated = false;
@@ -71,13 +72,18 @@ namespace Bath
 
         public override void Update(GameTime gameTime)
         {
+            if(animStop == false)
             frameTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (frameTime > 0.15f)
             {
                 frameTime = 0;
                 animFrame++;
                 if (animFrame == 4)
+                { 
                     animFrame = 0;
+                    animStop = true;
+                }
+                    
             }
 
             delta.X += waveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -95,7 +101,12 @@ namespace Bath
             prevState = keyboardState;
             keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.Space) && !prevState.IsKeyDown(Keys.Space))
-                cursorPos.X -= 40 * scale ;
+            {
+                if (animStop == true)
+                    animStop = false;
+                cursorPos.X -= 40 * scale;
+            }
+                
 
             if(cursorPos.X > (res.X/2 + (barTex.Width * scale) / 2  - cursorWidth))
             {
@@ -125,9 +136,14 @@ namespace Bath
             spriteBatch.End();
         }
 
-        public override bool ScreenChange()
+        public override int ScreenChange()
         {
-            return fatherDefeated;
+            if (fatherDefeated)
+                return 0;
+            else if (raped)
+                return 2;
+            else
+                return 1;
         }
 
         public override void Reset()
@@ -135,6 +151,7 @@ namespace Bath
             fatherDefeated = false;
             raped = false;
             animFrame = 0;
+            animStop = true;
             cursorPos.X = (res.X - cursorWidth) / 2;
             cursorSpeed = (int)res.X / 10;
         }

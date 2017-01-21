@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Bath.cs" />
     <Compile Include="BattleScreen.cs" />
+    <Compile Include="OverScreen.cs" />
     <Compile Include="Father.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="Screen.cs" />
     <Compile Include="ScreenManager.cs" />
     <Compile Include="SeaScreen.cs" />
+    <Compile Include="StartScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -74,6 +76,8 @@
     <Content Include="Content\FlyingFather2.png" />
     <Content Include="Content\FlyingFather2S.png" />
     <Content Include="Content\flyingFatherS.png" />
+    <Content Include="Content\Gameover screen.png" />
+    <Content Include="Content\Startscreen.png" />
     <Content Include="Content\wannaznow.png" />
     <Content Include="Content\wannaznow2.png" />
     <Content Include="Content\water.png" />

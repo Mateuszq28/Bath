@@ -67,9 +67,12 @@ namespace Bath
 
         }
 
-        public override bool ScreenChange()
+        public override int ScreenChange()
         {
-            return bath.CheckCollision(listOfFathers);
+            if (bath.CheckCollision(listOfFathers))
+                return 1;
+            else
+                return 0;
         }
 
         public override void Reset()

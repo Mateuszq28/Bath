@@ -27,7 +27,10 @@ namespace Bath
             
         }
 
-        public abstract bool ScreenChange();
+        public abstract int ScreenChange();
+        
+            
+        
         
 
         
