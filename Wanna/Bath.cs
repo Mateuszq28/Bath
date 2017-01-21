@@ -15,6 +15,9 @@ namespace Bath
     {
         Vector2 res;
         Vector2 position;
+        Vector2 wave1, wave2, wave3;
+        float delta = 0;
+        int waveSpeed;
         //Vector2 positionDraw;
         int width, height;
         int speed;
@@ -34,6 +37,9 @@ namespace Bath
             a = -res.Y/(res.X*res.X);
             b = res.Y / res.X;
             c = res.Y/2;
+
+            waveSpeed = (int)res.X / 30;
+            
             
         }
 
@@ -64,6 +70,16 @@ namespace Bath
             angle = (float)Math.Atan( la );
             lb = position.Y - (la) * position.X;
 
+            wave1 = position;
+            delta +=  waveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (delta > (res.Y /45) || delta < -(res.Y /45))
+                waveSpeed = waveSpeed * -1;
+            
+            wave2 = new Vector2(position.X + (float)Math.Cos(angle) * res.X / 2, position.Y + (float)Math.Sin(angle) * res.X / 2);
+            //wave2 = new Vector2(position.X + res.X, position.Y);
+
+            wave3 = new Vector2(position.X - (float)Math.Cos(angle) * res.X / 2, position.Y - (float)Math.Sin(angle) * res.X / 2);
+
 
         }
 
@@ -72,12 +88,24 @@ namespace Bath
             spriteBatch.Begin();
             spriteBatch.Draw(bathTex1, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(bathTex2, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(water, position, null, Color.White, angle, new Vector2(water.Width / 2, 0), scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(water, new Vector2(position.X + (float)Math.Cos(angle) * res.X/2 , position.Y + (float)Math.Sin(angle) * res.X/2 ), null, Color.White, angle, new Vector2(0, 0), scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(water, new Vector2(position.X - (float)Math.Cos(angle) * res.X / 2, position.Y - (float)Math.Sin(angle) * res.X / 2), null, Color.White, angle, new Vector2(water.Width, 0), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, new Vector2(wave1.X,wave1.Y + delta), null, Color.White, angle, new Vector2(water.Width / 2, 0), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, new Vector2(wave2.X, wave2.Y + delta), null, Color.White, angle, new Vector2(0, 0), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, new Vector2(wave3.X, wave3.Y + delta), null, Color.White, angle, new Vector2(water.Width, 0), scale, SpriteEffects.None, 0f);
 
             spriteBatch.End();
         }
+
+        public void WaterMovement()
+        {
+            
+            wave1 = position;
+            wave2 = new Vector2(position.X + (float)Math.Cos(angle) * res.X / 2, position.Y + (float)Math.Sin(angle) * res.X / 2);
+            wave3 = new Vector2(position.X - (float)Math.Cos(angle) * res.X / 2, position.Y - (float)Math.Sin(angle) * res.X / 2);
+        }
     }
+
+
+
+
 }
 
