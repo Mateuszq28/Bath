@@ -30,3 +30,4 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Conten
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\bathtube1l.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\wannaznow.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\wannaznow2.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Debug\Content\water.xnb

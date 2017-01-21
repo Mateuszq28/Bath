@@ -15,14 +15,16 @@ namespace Bath
     {
         Vector2 res;
         Vector2 position;
-        Vector2 positionDraw;
+        //Vector2 positionDraw;
         int width, height;
         int speed;
         float angle;
         Texture2D bathTex1, bathTex2;
+        Texture2D water;
         float scale;
         KeyboardState keyboardState;
         float a, b, c;
+        float la, lb;
 
         public Bath(Vector2 res)
         {
@@ -39,6 +41,7 @@ namespace Bath
         {
             bathTex1 = Content.Load<Texture2D>("wannaznow2");
             bathTex2 = Content.Load<Texture2D>("wannaznow");
+            water = Content.Load<Texture2D>("water");
             scale = (res.X / 5) / bathTex1.Width;
             width = (int)(bathTex1.Width * scale);
             height = (int)(bathTex1.Height * scale);
@@ -55,11 +58,11 @@ namespace Bath
                 position.X -= speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             position.Y = a * position.X * position.X + b * position.X + c;
-            //position.Y = 100;
-            positionDraw.X = position.X - width/2;
-            positionDraw.Y = position.Y - height/2;
-
-            angle = (float)Math.Atan( 2*a*position.X + b );
+            //positionDraw.X = position.X - width/2;
+            //positionDraw.Y = position.Y - height/2;
+            la = (2 * a * position.X + b);
+            angle = (float)Math.Atan( la );
+            lb = position.Y - (la) * position.X;
 
 
         }
@@ -67,8 +70,12 @@ namespace Bath
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(bathTex1, position, null, Color.White, angle, new Vector2(width, height), scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(bathTex2, position, null, Color.White, angle, new Vector2(width , height ), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(bathTex1, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(bathTex2, position, null, Color.White, angle, new Vector2(bathTex2.Width / 2, bathTex2.Height / 2), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, position, null, Color.White, angle, new Vector2(water.Width / 2, 0), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, new Vector2(position.X + (float)Math.Cos(angle) * res.X/2 , position.Y + (float)Math.Sin(angle) * res.X/2 ), null, Color.White, angle, new Vector2(0, 0), scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(water, new Vector2(position.X - (float)Math.Cos(angle) * res.X / 2, position.Y - (float)Math.Sin(angle) * res.X / 2), null, Color.White, angle, new Vector2(water.Width, 0), scale, SpriteEffects.None, 0f);
+
             spriteBatch.End();
         }
     }

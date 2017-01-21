@@ -17,13 +17,13 @@ namespace Bath
 
         public ScreenManager(GraphicsDeviceManager graphics)
         {
-            //resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            //resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            resolution.Y = 480;
-            resolution.X = 853;
+            resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            //resolution.Y = 480;
+            //resolution.X = 853;
             graphics.PreferredBackBufferHeight = (int)resolution.Y;
             graphics.PreferredBackBufferWidth = (int)resolution.X;
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = true;
 
 
             seaScreen = new SeaScreen(resolution);

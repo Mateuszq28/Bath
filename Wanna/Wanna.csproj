@@ -61,6 +61,7 @@
     <Content Include="Content\boatTex.png" />
     <Content Include="Content\wannaznow.png" />
     <Content Include="Content\wannaznow2.png" />
+    <Content Include="Content\water.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
