@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
+
 
 namespace Bath
 {
@@ -36,6 +38,8 @@ namespace Bath
         public bool raped = false;
         KeyboardState keyboardState;
         KeyboardState prevState;
+        SoundEffect overSound;
+
 
 
         public BattleScreen(Vector2 res)
@@ -66,6 +70,7 @@ namespace Bath
             bathFront = Content.Load<Texture2D>("Bathtube2en");
             barTex = Content.Load<Texture2D>("Battlebar");
             cursorTex = Content.Load<Texture2D>("battlecursor");
+            overSound = Content.Load<SoundEffect>("ukhhhyh");
 
             
         }
@@ -141,7 +146,11 @@ namespace Bath
             if (fatherDefeated)
                 return 0;
             else if (raped)
+            {
+                overSound.Play();
+
                 return 2;
+            }
             else
                 return 1;
         }

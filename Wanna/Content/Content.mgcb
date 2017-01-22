@@ -283,3 +283,39 @@
 /processorParam:TextureFormat=Color
 /build:Gameover screen.png
 
+#begin music.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:music.wav
+
+#begin daddy1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:daddy1.wav
+
+#begin daddy3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:daddy3.wav
+
+#begin ohhdaddy.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ohhdaddy.wav
+
+#begin ohhdaddy2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ohhdaddy2.wav
+
+#begin ukhhhyh.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ukhhhyh.wav
+

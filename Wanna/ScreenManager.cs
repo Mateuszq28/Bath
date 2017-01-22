@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Bath
 {
@@ -20,6 +21,7 @@ namespace Bath
         float time = 0;
         string scoreString;
         int score;
+        
 
 
         public ScreenManager(GraphicsDeviceManager graphics)
@@ -36,6 +38,8 @@ namespace Bath
             screens.Add(new BattleScreen(resolution));
             screens.Add(new OverScreen(resolution));
             screens.Add(new StartScreen(resolution));
+
+            
         }
 
         public void LoadContent(ContentManager Content)
@@ -46,10 +50,13 @@ namespace Bath
             }
 
             font = Content.Load<SpriteFont>("Score");
+            
         }
+
 
         public void Update(GameTime gameTime)
         {
+            int screenChngeVar;
 
             if (currentScreen == 0)
             {
@@ -61,11 +68,13 @@ namespace Bath
             scoreString = "Score: " + score;
 
             screens[currentScreen].Update(gameTime);
-            
-            if(screens[currentScreen].ScreenChange() != currentScreen)
+
+            screenChngeVar = screens[currentScreen].ScreenChange();
+
+            if(screenChngeVar != currentScreen)
             {
                 prevScreen = currentScreen;
-                currentScreen = screens[currentScreen].ScreenChange();
+                currentScreen = screenChngeVar;
                 screens[prevScreen].Reset();
                 if (prevScreen == 2 && currentScreen == 0)
                 {

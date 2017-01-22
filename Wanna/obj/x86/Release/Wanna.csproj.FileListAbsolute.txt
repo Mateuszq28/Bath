@@ -47,3 +47,9 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Cont
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\Startscreen.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Release\Wanna.csprojResolveAssemblyReference.cache
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\Gameover screen.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\music.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\daddy1.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\daddy3.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ohhdaddy.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ohhdaddy2.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ukhhhyh.xnb
