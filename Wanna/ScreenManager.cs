@@ -31,7 +31,7 @@ namespace Bath
             resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferHeight = (int)resolution.Y;
             graphics.PreferredBackBufferWidth = (int)resolution.X;
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = true;
 
 
             screens.Add(new SeaScreen(resolution));
