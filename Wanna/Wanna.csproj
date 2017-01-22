@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bath</RootNamespace>
-    <AssemblyName>Wanna</AssemblyName>
+    <AssemblyName>BadDad</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -75,9 +75,6 @@
   <ItemGroup>
     <Content Include="BadDad.ico" />
     <Content Include="Content\background.png" />
-    <Content Include="Content\bathtube1.png" />
-    <Content Include="Content\bathtube1l.png" />
-    <Content Include="Content\bathtube2.png" />
     <Content Include="Content\Bathtube2en.png" />
     <Content Include="Content\bathtube3.png" />
     <Content Include="Content\Bathwithbaby.png" />
@@ -87,11 +84,8 @@
     <Content Include="Content\battlefight2H.png" />
     <Content Include="Content\battlefight3H.png" />
     <Content Include="Content\battlefight4H.png" />
-    <Content Include="Content\boatTex.png" />
     <Content Include="Content\daddy1.wav" />
     <Content Include="Content\daddy3.wav" />
-    <Content Include="Content\flyingFather.png" />
-    <Content Include="Content\FlyingFather2.png" />
     <Content Include="Content\FlyingFather2S.png" />
     <Content Include="Content\flyingFatherS.png" />
     <Content Include="Content\Gameover screen.png" />
@@ -99,9 +93,8 @@
     <Content Include="Content\ohhdaddy.wav" />
     <Content Include="Content\ohhdaddy2.wav" />
     <Content Include="Content\Startscreen.png" />
+    <Content Include="Content\tehno.wav" />
     <Content Include="Content\ukhhhyh.wav" />
-    <Content Include="Content\wannaznow.png" />
-    <Content Include="Content\wannaznow2.png" />
     <Content Include="Content\water.png" />
     <Content Include="Icon.ico" />
     <Content Include="Icon1.ico" />
@@ -128,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Content\Score.spritefont" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

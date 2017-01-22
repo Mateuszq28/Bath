@@ -28,22 +28,27 @@ namespace Bath
         float cursorWidth;
         int bathWidth, bathHeight;
         int max;
+        int level = 1;
         int waveSpeed;
         int waveSpeedY;
         int animFrame;
         bool animStop = true;
         float frameTime;
+        float musicDelay = 0;
         int cursorSpeed;
         public bool fatherDefeated = false;
         public bool raped = false;
         KeyboardState keyboardState;
         KeyboardState prevState;
         SoundEffect overSound;
+        SoundEffect themeMusic;
+        SoundEffectInstance themeInstance;
 
 
 
         public BattleScreen(Vector2 res)
         {
+            
             scale = res.X / 1920;
             this.res = res;
             waveSpeed = (int)res.X / 30;
@@ -56,7 +61,7 @@ namespace Bath
             cursorWidth = 65.0f * scale;
             cursorPos.X = (res.X - cursorWidth) / 2;
             cursorPos.Y = 0;
-            cursorSpeed = (int)res.X / 10; 
+            cursorSpeed = (int)(res.X / (9 - 0.5 * level )); 
         }
 
         public override void LoadContent(ContentManager Content)
@@ -71,12 +76,19 @@ namespace Bath
             barTex = Content.Load<Texture2D>("Battlebar");
             cursorTex = Content.Load<Texture2D>("battlecursor");
             overSound = Content.Load<SoundEffect>("ukhhhyh");
-
+            themeMusic = Content.Load<SoundEffect>("tehno");
+            themeInstance = themeMusic.CreateInstance();
+            themeInstance.IsLooped = true;
+            themeInstance.Play();
+            themeInstance.Pause();
             
         }
 
         public override void Update(GameTime gameTime)
         {
+            musicDelay += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (musicDelay > 1.3) 
+                themeInstance.Resume();
             if(animStop == false)
             frameTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (frameTime > 0.15f)
@@ -109,7 +121,7 @@ namespace Bath
             {
                 if (animStop == true)
                     animStop = false;
-                cursorPos.X -= 40 * scale;
+                cursorPos.X -= 50 * scale;
             }
                 
 
@@ -144,9 +156,13 @@ namespace Bath
         public override int ScreenChange()
         {
             if (fatherDefeated)
+            {
+                themeInstance.Pause();
                 return 0;
+            }
             else if (raped)
             {
+                themeInstance.Pause();
                 overSound.Play();
 
                 return 2;
@@ -155,14 +171,16 @@ namespace Bath
                 return 1;
         }
 
-        public override void Reset()
+        public override void Reset(int lvl)
         {
+            level = lvl;
             fatherDefeated = false;
             raped = false;
             animFrame = 0;
             animStop = true;
             cursorPos.X = (res.X - cursorWidth) / 2;
-            cursorSpeed = (int)res.X / 10;
+            cursorSpeed = (int)(res.X / (10 - 1 * level ));
+            musicDelay = 0;
         }
     }
 }

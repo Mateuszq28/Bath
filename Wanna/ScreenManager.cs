@@ -14,21 +14,27 @@ namespace Bath
     class ScreenManager
     {
         Vector2 resolution;
+        Vector2 scorePosition;
+        Vector2 levelPosition;
         List<Screen> screens = new List<Screen>();
         int currentScreen;
         int prevScreen;
         SpriteFont font;
         float time = 0;
-        string scoreString;
-        int score;
+        string scoreString = " ";
+        string levelString;
+        int score, level;
+        float scale;
         
 
 
         public ScreenManager(GraphicsDeviceManager graphics)
         {
+            
             currentScreen = 3;
             resolution.X = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             resolution.Y = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            scale = resolution.X / 1920;
             graphics.PreferredBackBufferHeight = (int)resolution.Y;
             graphics.PreferredBackBufferWidth = (int)resolution.X;
             graphics.IsFullScreen = true;
@@ -38,6 +44,9 @@ namespace Bath
             screens.Add(new BattleScreen(resolution));
             screens.Add(new OverScreen(resolution));
             screens.Add(new StartScreen(resolution));
+
+            score = 0;
+            level = 1;
 
             
         }
@@ -50,7 +59,9 @@ namespace Bath
             }
 
             font = Content.Load<SpriteFont>("Score");
-            
+
+            scorePosition = new Vector2(resolution.X * 0.044f);
+            levelPosition = new Vector2(scorePosition.X, scorePosition.Y + font.MeasureString(scoreString).Y);
         }
 
 
@@ -63,9 +74,11 @@ namespace Bath
                 time += (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
             
-
+            
             score = (int)time / 2;
+            
             scoreString = "Score: " + score;
+            levelString = "Level: " + level;
 
             screens[currentScreen].Update(gameTime);
 
@@ -75,11 +88,17 @@ namespace Bath
             {
                 prevScreen = currentScreen;
                 currentScreen = screenChngeVar;
-                screens[prevScreen].Reset();
                 if (prevScreen == 2 && currentScreen == 0)
                 {
+                    level = 1;
                     time = 0;
                 }
+                else if(prevScreen == 1 &&  currentScreen == 0 && level < 8)
+                {
+                    level++;
+                }
+                screens[prevScreen].Reset(level);
+                screens[currentScreen].Reset(level);
                 
             }
             
@@ -92,7 +111,11 @@ namespace Bath
             if (currentScreen == 0 || currentScreen == 1 || currentScreen == 2)
             {
                 spriteBatch.Begin();
-                spriteBatch.DrawString(font, scoreString, new Vector2(100, 100), Color.Black);
+                //spriteBatch.DrawString(font, scoreString, new Vector2(100, 100), Color.Black);
+                //spriteBatch.DrawString(font, levelString, new Vector2(100, 200), Color.Red);
+                spriteBatch.DrawString(font, scoreString, scorePosition, Color.Black, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.DrawString(font, levelString, levelPosition, Color.Red, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
                 spriteBatch.End();
             }
         }

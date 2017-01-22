@@ -21,7 +21,7 @@ namespace Bath
         float time;
         int currentFrame = 0;
 
-        public Father(int positionX, Vector2 res, float scale, Texture2D fatherTex, Texture2D fatherTex2)
+        public Father(int positionX, Vector2 res, float scale, Texture2D fatherTex, Texture2D fatherTex2, int lvl)
         {
             this.scale = scale;
             position.X = positionX;
@@ -30,7 +30,7 @@ namespace Bath
             position.Y = -height;
             this.fatherTex[0] = fatherTex;
             this.fatherTex[1] = fatherTex2;
-            speed = (int)res.Y / 2;
+            speed = (int)(res.Y / (1.9f-lvl*0.1));
         }
 
        

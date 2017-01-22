@@ -35,7 +35,7 @@ namespace Bath
 
         
 
-        public virtual void Reset()
+        public virtual void Reset(int lvl)
         {
 
         }

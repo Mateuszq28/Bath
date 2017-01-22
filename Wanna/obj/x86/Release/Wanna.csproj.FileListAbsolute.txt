@@ -18,8 +18,6 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Cont
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\wannaznow.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\wannaznow2.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\water.xnb
-C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Wanna.exe
-C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Wanna.pdb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\MonoGame.Framework.dll
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\SharpDX.dll
@@ -40,8 +38,6 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Shar
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\SharpDX.XInput.xml
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\SharpDX.RawInput.xml
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
-C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Release\Wanna.exe
-C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Release\Wanna.pdb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\gameoverscreen.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\Score.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\Startscreen.xnb
@@ -53,3 +49,8 @@ C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Cont
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ohhdaddy.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ohhdaddy2.xnb
 C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\ukhhhyh.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\Content\tehno.xnb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\BadDad.exe
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\bin\Windows\x86\Release\BadDad.pdb
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Release\BadDad.exe
+C:\Users\matit_000\Documents\GitHub\Bath\Bath\Wanna\obj\x86\Release\BadDad.pdb

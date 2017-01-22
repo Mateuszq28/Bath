@@ -29,6 +29,7 @@ namespace Bath
         SoundEffect[] daddy = new SoundEffect[2];
         SoundEffectInstance themeInstance;
         static int licznik = 0;
+        int level = 0;
 
         public SeaScreen(Vector2 res)
         {
@@ -67,10 +68,10 @@ namespace Bath
             }
             themeInstance.Resume();
             time += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if(time > 0.7)
+            if(time > (0.66 - (level*0.04)))
             {
                 time = 0;
-                listOfFathers.Add(new Father((int)(rand.Next(0,8) * res.X) / 8, res, scale, fatherTex, fatherTex2));
+                listOfFathers.Add(new Father((int)(rand.Next(0,8) * res.X) / 8, res, scale, fatherTex, fatherTex2,level));
             }
             bath.Update(gameTime);
             for (int i = 0; i < listOfFathers.Count(); i++)
@@ -105,8 +106,9 @@ namespace Bath
                 return 0;
         }
 
-        public override void Reset()
+        public override void Reset(int lvl)
         {
+            this.level = lvl;
             listOfFathers.Clear();
             time = 0;
             bath.Reset();
